@@ -11,6 +11,12 @@ body {
   flex-direction: column;
 }
 
+/* メインコンテンツにヘッダーの分の余白 */
+main {
+  padding-top: 72px;
+  flex: 1;
+}
+
 /* ==== ヘッダー固定と横並び ==== */
 .nav-wrapper {
   position: fixed;
@@ -65,12 +71,6 @@ body {
   border-bottom: 2px solid #0078ff;
 }
 
-/* メインコンテンツにヘッダーの分の余白 */
-main {
-  padding-top: 72px;
-  flex: 1;
-}
-
 /* ==== メインビジュアル ==== */
 .hero {
   display: flex;
@@ -90,6 +90,12 @@ main {
 .hero-text {
   max-width: 600px;
   padding: 20px;
+}
+
+.hero-text video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
 }
 
 .video-data {
@@ -421,8 +427,7 @@ span {
 
 /* 固定高さのカード + フレックス配置 */
 .product.fixed-height {
-  height: 420px;
-  /* カードの高さを統一して、見た目を揃える */
+  min-height: 450px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -430,10 +435,10 @@ span {
 
 /* コンテンツ全体を縦並びにし、上下に分ける */
 .product-content {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 1;
   text-align: left;
 }
 
@@ -475,8 +480,20 @@ span {
 
   /* メインコンテンツにヘッダーの分の余白 */
   main {
-    padding-top: 110px;
-    flex: 1;
+    width: 100%;
+    max-width: 600px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    padding-top: 115px;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
   }
 
   .nav-inner {
@@ -503,19 +520,25 @@ span {
   /* HEROセクション：縦並び */
   .hero {
     flex-direction: column;
-    padding: 20px;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
   }
 
   .hero-img {
     width: 90%;
-    max-width: 400px;
-    height: auto;
+    max-width: 300px;
+    margin: 0 auto 20px;
   }
 
   .hero-text {
-    width: 100%;
+    width: 90%;
     max-width: 100%;
-    padding: 10px;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
   }
 
   .hero-text h1 {
@@ -523,13 +546,17 @@ span {
   }
 
   .hero-text p {
-    text-align: center;
+    width: 100%;
     font-size: 15px;
+    margin: 10px 0 20px;
   }
 
   .hero-text video {
     width: 100%;
     height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
   }
 
   /* セクションの間隔調整 */
@@ -593,4 +620,16 @@ span {
     display: none;
     /* PC用フィルター非表示 */
   }
+
+  .shop-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-list-area {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  
 }
