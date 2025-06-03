@@ -17,7 +17,7 @@
           <li><a href="#" class="active">Top</a></li>
           <li><a href="pages/shop.html">Shop</a></li>
           <li><a href="pages/subScriprion.html">Support</a></li>
-          <li><a href="pages/info.html">INFO</a></li>
+          <li><a href="pages/portfolio.html">Portfolio</a></li>
         </ul>
       </nav>
     </div>
@@ -43,15 +43,15 @@
       <h2 class="section-title">Accounts</h2>
       <div class="social-links">
         <a class="social-button" href="https://www.youtube.com/@AdoKisaragi" target="_blank">
-          <img src="assets/img/youtube_orig.svg" alt="YouTube">
+          <img src="assets/img/youtube_log.png" alt="YouTube">
           <strong>YouTube</strong>
         </a>
         <a class="social-button" href="https://x.com/AdoKisaragi" target="_blank">
-          <img src="assets/img/x_black.svg" alt="X">
+          <img src="assets/img/X_log.png" alt="X">
           <strong>X（旧Twitter）</strong>
         </a>
         <a class="social-button" href="https://www.fanbox.cc/@kisaragiado" target="_blank">
-          <img src="assets/img/fanbox.svg" alt="FANBOX">
+          <img src="assets/img/fanbox_log.png" alt="FANBOX">
           <strong>FANBOX</strong>
         </a>
         <a class="social-button" href="https://adokisaragi.booth.pm/" target="_blank">
@@ -86,17 +86,38 @@
 
     <section class="video-data">
       <h2 class="section-title">Recommended Videos</h2>
-      <div class="card-row">
-        <div class="video-card">動画①</div>
-        <div class="video-card">動画②</div>
-        <div class="video-card">動画③</div>
+      <div class="scroll-wrapper">
+        <button class="scroll-button left" onclick="scrollVideos(-1)">&#9664;</button>
+        <div class="scrollable-row" id="videoRow">
+          <div class="video-card">
+            <a href="https://www.youtube.com/watch?v=2mjSL5MzKAE" target="_blank">
+              <img src="assets/img/thumbnail/firstlive.png" alt="初配信">
+            </a>
+          </div>
+          <div class="video-card">
+            <a href="https://www.youtube.com/watch?v=5J9jRt4NSwU" target="_blank">
+              <img src="assets/img/thumbnail/teaserpv.png" alt="ティザーPV">
+            </a>
+          </div>
+          <div class="video-card">
+            <a href="https://www.youtube.com/watch?v=fnewg30iaGk" target="_blank">
+              <img src="assets/img/thumbnail/cooking.jpg" alt="料理">
+            </a>
+          </div>
+          <div class="video-card">
+            <a href="https://www.youtube.com/watch?v=sGKrbIAOpzY" target="_blank">
+              <img src="assets/img/thumbnail/mariocart.jpg" alt="マリカ杯">
+            </a>
+          </div>
+        </div>
+        <button class="scroll-button right" onclick="scrollVideos(1)">&#9654;</button>
       </div>
     </section>
 
     <section class="section news">
       <h2 class="section-title">NEWS</h2>
       <div class="card-row">
-        <div class="news-card">グッズ販売開始</div>
+        <div class="news-card">coming soon...</div>
       </div>
     </section>
 
@@ -104,9 +125,26 @@
 
   <footer class="footer">
     <p>&copy; 2025 Kisaragi Ado.</p>
+    <div class="footer-icons">
+      <a href="https://www.youtube.com/@AdoKisaragi" target="_blank">
+        <img src="assets/img/youtube_log.png" alt="YouTube">
+      </a>
+      <a href="https://x.com/AdoKisaragi" target="_blank">
+        <img src="assets/img/X_log.png" alt="x(旧Twitter)">
+      </a>
+      <a href="https://github.com/AdoKisaragi" target="_blank" style="padding-right: 15px;">
+        <img src="assets/img/github_log.png" alt="github">
+      </a>
+    </div>
   </footer>
 
-  <div class="to-top"><a href="#">↑</a></div>
+  <script>
+    function scrollVideos(direction) {
+      const row = document.getElementById('videoRow');
+      const scrollAmount = 250; // 1クリックでスクロールするpx
+      row.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+    }
+  </script>
 
 </body>
 
